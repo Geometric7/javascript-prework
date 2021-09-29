@@ -37,4 +37,22 @@ if(playerInput == '2'){
 if(playerInput == '3'){
 	playerMove = 'nożyce';
 }
+
+
 printMessage('Twój ruch to: ' + playerMove);
+
+if( computerMove == 'kamień' && playerMove == 'papier'){
+  printMessage('Ty wygrywasz!');
+}
+
+if( computerMove == 'kamień' && playerMove == 'nożyce'){
+  printMessage('Przegrywasz!');
+}
+
+if( computerMove == 'kamień' && playerMove == 'kamień'){
+  printMessage('Remis!');
+}
+
+if( computerMove == 'kamień' && playerMove == 'nieznany ruch'){
+  printMessage('Wybierz 1, 2 lub 3!');
+}
