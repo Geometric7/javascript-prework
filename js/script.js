@@ -16,49 +16,37 @@ function getMoveName(argMoveId) {
     return 'nożyce';
   }
   else {
-    printMEssage('Nie znam ruchu o id ' + argMoveId + '.');
+    printMessage('Nie znam ruchu o id ' + argMoveId + '.');
     return 'nieznany ruch';
   }
 }
 function displayResult(argComputerMove, argPlayerMove){
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
-  if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+  if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+    printMessage('Wygrywasz!');
+  } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+    printMessage('Wygrywasz!');
+  } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+    printMessage('Wygrywasz!');
+  } else if (argPlayerMove == argComputerMove) {
+    printMessage('Remis!');
+  } else {
+    printMessage('Przegrywasz !');
+  }
+
+  /*if(argComputerMove == 'kamień' && argPlayerMove == 'papier') || (argComputerMove == 'papier' && argPlayerMove == 'nożyce') || (argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
     printMessage('Ty wygrywasz!');
   }
-  else if( argComputerMove == 'kamień' && argPlayerMove =='kamień'){
+  if(argComputerMove == 'kamień' && argPlayerMove =='kamień') || (argComputerMove == 'papier' && argPlayerMove == 'papier') || (argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
     printMessage('Remis!');
   }
-  else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+  if(argComputerMove == 'kamień' && argPlayerMove == 'nożyce') || (argComputerMove == 'papier' && argPlayerMove == 'kamień') || (argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
     printMessage('Ty przegrywasz!');
   }
-  else if( argComputerMove == 'kamień' && argPlayerMove == 'nieznany ruch'){
+  if(argComputerMove == 'kamień' && argPlayerMove == 'nieznany ruch') || (argComputerMove == 'papier' && argPlayerMove == 'nieznany ruch') || (argComputerMove == 'nożyce' && argPlayerMove == 'nieznany ruch'){
     printMessage('Nieznany ruch!');
-  }
-  if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
-    printMessage('Ty wygrywasz!');
-  }
-  else if( argComputerMove == 'papier' && argPlayerMove == 'papier'){
-    printMessage('Remis!');
-  }
-  else if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
-    printMessage('Ty przegrywasz!');
-  }
-  else if( argComputerMove == 'papier' && argPlayerMove == 'nieznany ruch'){
-    printMessage('Nieznany ruch!');
-  }
-  if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
-    printMessage('Ty wygrywasz!');
-  }
-  else if( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
-    printMessage('Remis!');
-  }
-  else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
-    printMessage('Ty przegrywasz!');
-  }
-  else if( argComputerMove == 'nożyce' && argPlayerMove == 'nieznany ruch'){
-    printMessage('Nieznany ruch!');
-  }
+  }*/
 }
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
