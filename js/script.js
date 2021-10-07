@@ -20,21 +20,33 @@ function playGame(playerInput){
             return 'nieznany ruch';
         }
     }
+
+    /*
+1.typ logiczny - boolean
+2.typ tekstowy - string ->''
+3.typ liczbowy - intiger ->całkowita liczba
+                -zmienno-przecinkowa-float
+4.typ brak danych - null
+5.tablice
+6.obiekty
+
+1=='1'
+1==='1'
+    */
     function displayResult(argComputerMove, argPlayerMove){
         printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-
-        if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
-            printMessage('Wygrywasz!');
-        } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
-            printMessage('Wygrywasz!');
-        } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-            printMessage('Wygrywasz!');
+        let result = 'Przegrywasz';
+        const mapMove = {
+            papier:'kamień',
+            nożyce:'papier',
+            kamień:'nożyce',
+        };
+        if (mapMove[argPlayerMove] == argComputerMove) {
+            result = 'Wygrywasz!';
         } else if (argPlayerMove == argComputerMove) {
-            printMessage('Remis!');
-        } else {
-            printMessage('Przegrywasz !');
+            result = 'Remis!';
         }
-
+        printMessage(result);
         /*if(argComputerMove == 'kamień' && argPlayerMove == 'papier') || (argComputerMove == 'papier' && argPlayerMove == 'nożyce') || (argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
         printMessage('Ty wygrywasz!');
     }
