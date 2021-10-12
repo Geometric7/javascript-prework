@@ -1,8 +1,4 @@
 {
-    let score = 0;
-    let scoreElement = document.getElementById('score')
-    console.log(scoreElement)
-
     function displayResult(argComputerMove, argPlayerMove) {
         printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
         let result = 'Przegrywasz';
